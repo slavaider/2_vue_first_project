@@ -1,8 +1,38 @@
+// Vue , app component
 import Vue from 'vue'
 import App from './App.vue'
+// Валидация
+import Vuelidate from 'vuelidate'
+// Роутер
+import VueRouter from 'vue-router'
+// Bootstrap
+import BootstrapVue from "bootstrap-vue"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-vue/dist/bootstrap-vue.css"
+// Components
+import srcForm from "./form/index";
+import srcHomePage from "./home-page/index";
+import Cars from "./cars/index"
+import Car from "./car/index"
+import CarFull from "./car-full/index"
 
-Vue.config.productionTip = false
+Vue.use(Vuelidate)
+Vue.use(VueRouter)
+Vue.use(BootstrapVue)
+
+const router = new VueRouter({
+    routes: [
+        {path: "", component: srcHomePage},
+        {path: "/form", component: srcForm},
+        {path: "/cars", component: Cars},
+        {path: "/cars/:id", component: Car, children: [{path: 'full', component: CarFull, name: 'carFull'}]},
+        // { path: "*", redirect: "/", component: srcHomePage }
+    ], mode: "history"
+});
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    el: '#app',
+    render: h => h(App),
+    router: router
+
+})

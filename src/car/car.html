@@ -1,0 +1,7 @@
+<section class="car">
+    <h1>Car id is {{id}}</h1>
+    <b-button variant="primary" size="sm" @click="Back">Back</b-button>
+    <hr>
+    <router-link tag="button" class="btn btn-info my-2" :to="{name:'carFull',params:{id}}">Info</router-link>
+    <router-view></router-view>
+</section>
