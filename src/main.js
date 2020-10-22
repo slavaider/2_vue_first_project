@@ -11,7 +11,7 @@ import srcHomePage from "./home-page/index";
 import Cars from "./cars/index"
 import Car from "./car/index"
 import CarFull from "./car-full/index"
-
+// Use
 Vue.use(Vuelidate)
 Vue.use(VueRouter)
 
