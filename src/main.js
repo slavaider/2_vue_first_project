@@ -5,10 +5,6 @@ import App from './App.vue'
 import Vuelidate from 'vuelidate'
 // Роутер
 import VueRouter from 'vue-router'
-// Bootstrap
-import BootstrapVue from "bootstrap-vue"
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap-vue/dist/bootstrap-vue.css"
 // Components
 import srcForm from "./form/index";
 import srcHomePage from "./home-page/index";
@@ -18,7 +14,6 @@ import CarFull from "./car-full/index"
 
 Vue.use(Vuelidate)
 Vue.use(VueRouter)
-Vue.use(BootstrapVue)
 
 const router = new VueRouter({
     routes: [
