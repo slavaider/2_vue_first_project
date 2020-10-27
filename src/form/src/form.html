@@ -1,35 +1,43 @@
 <section class="py-2 px-2 custom_form">
     <form @submit.prevent="onSubmit">
+        <!--Email-->
         <div class="form-group">
             <label for="email">Email</label>
             <input class="form-control" type="email"
                    :class="{'is-invalid':$v.email.$invalid,'is-valid':$v.email.$dirty && !$v.email.$invalid}"
                    id="email" v-model.trim="$v.email.$model"/>
+            <!--Errors-->
             <div class="invalid-feedback" v-if="!$v.email.required">Email is required</div>
             <div class="invalid-feedback" v-if="!$v.email.email">Email is incorrect</div>
             <div class="invalid-feedback" v-if="!$v.email.uniqueEmail">Email is already exists</div>
         </div>
+        <!--Password-->
         <div class="form-group">
             <label for="password">Password</label>
             <input type="password" class="form-control"
                    :class="{'is-invalid':$v.password.$invalid,'is-valid':$v.password.$dirty && !$v.password.$invalid}"
                    id="password" v-model.trim="$v.password.$model"/>
+            <!--Errors-->
             <div class="invalid-feedback" v-if="!$v.password.required">Password is required.</div>
-            <div class="invalid-feedback" v-if="!$v.password.minLength">Password must have at least
-                {{ $v.password.$params.minLength.min }}
+            <div class="invalid-feedback"
+                 v-if="!$v.password.minLength">Password must have at least {{ $v.password.$params.minLength.min }}
                 letters. Now it's {{password.length}}
             </div>
         </div>
+        <!--Confirm password-->
         <div class="form-group">
             <label for="repeat_password">Confirm password</label>
             <input type="password" id="repeat_password" class="form-control"
                    :class="{'is-invalid':$v.repeatPassword.$invalid,'is-valid':$v.repeatPassword.$dirty && !$v.repeatPassword.$invalid}"
                    v-model.trim="$v.repeatPassword.$model"/>
+            <!--Errors-->
             <div class="invalid-feedback" v-if="!$v.repeatPassword.sameAsPassword">Passwords must be identical.</div>
         </div>
+        <!-- Submit Button -->
         <button type="submit" class="mt-1 btn btn-success"
                 :disabled="$v.$invalid || submitStatus === 'PENDING'  ">Submit!
         </button>
+        <!--Submit Status-->
         <p style="color:lime" v-if="submitStatus === 'OK'">Thanks for your submission!</p>
         <p class="invalid-feedback" v-if="submitStatus === 'ERROR'">Please fill the form correctly.</p>
         <p style="color: orange;" v-if="submitStatus === 'PENDING'">Sending...</p>

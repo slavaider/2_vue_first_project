@@ -1,5 +1,77 @@
-
 <section class="src-home-page">
-  <h1>src-home-page Component Tempate</h1>
+    <div class="container">
+        <h1>Form input</h1>
+        <!--Textarea-->
+        <label>
+            <input type="text" v-model="text">
+        </label>
+        <br>
+        <label for="1">
+            <textarea v-model="text" name="textarea" id="1"> </textarea>
+        </label>
+        <p>{{text}}</p>
+        <hr>
+        <!--Checkboxes-->
+        <pre>{{checkedValue}}</pre>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input v-model="checkedValue" type="checkbox" class="form-check-input" name="Instagram" id="Instagram"
+                       value="Instagram">
+                Instagram
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input v-model="checkedValue" type="checkbox" class="form-check-input" name="VK" id="VK" value="VK">
+                VK
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input v-model="checkedValue" type="checkbox" class="form-check-input" name="Facebook" id="Facebook"
+                       value="Facebook">
+                Facebook
+            </label>
+        </div>
+        <!--Radio-->
+        <pre>{{radio_checkedValue}}</pre>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input v-model="radio_checkedValue" type="radio" class="form-check-input" name="Instagram"
+                       id="Instagram"
+                       value="Instagram">
+                Instagram
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input v-model="radio_checkedValue" type="radio" class="form-check-input" name="VK" id="VK" value="VK">
+                VK
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input v-model="radio_checkedValue" type="radio" class="form-check-input" name="Facebook" id="Facebook"
+                       value="Facebook">
+                Facebook
+            </label>
+        </div>
+        <!--        select-->
+        <div class="form-group">
+            <label for="sel">SELECT</label>
+            <select v-model="social" class="form-control" name="sel" id="sel">
+                <option v-for="s in social_list">{{s}}</option>
+            </select>
+            <p>{{social}}</p>
+        </div>
+        <!--        age-->
+        <label>
+            <input type="text" v-model.number="age">
+        </label>
+        <p>{{age}}</p>
+        <!--on off-->
+        <h3 v-if="switched">Visible</h3>
+        <on-off v-model="switched"></on-off>
+    </div>
 </section>
 

@@ -1,10 +1,10 @@
-
 <template>
-    <section>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <div>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+              integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+              crossorigin="anonymous">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <a class="navbar-brand" href="/">Home</a>
-
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -14,7 +14,7 @@
                         <router-link class="nav-link" active-class="active" to="/form">Form</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link  class="nav-link" active-class="active" to="/cars">Cars</router-link>
+                        <router-link class="nav-link" active-class="active" to="/cars">Cars</router-link>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -27,7 +27,7 @@
             <router-view></router-view>
         </div>
 
-    </section>
+    </div>
 </template>
 
 <script>
