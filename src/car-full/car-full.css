@@ -1,3 +1,9 @@
 .car-full {
 
 }
+
+.scroll {
+    width: 100px;
+    height: 1000px;
+    background-color: #ccc
+}

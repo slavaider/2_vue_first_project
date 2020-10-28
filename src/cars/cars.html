@@ -1,6 +1,10 @@
 <section class="cars">
-  <h1>cars Component</h1>
-  <ul>
-    <router-link tag="li" v-for="car of 5" v-bind:key="car" v-bind:to="'cars/'+car"><a>Car {{car}}</a></router-link>
-  </ul>
+    <h1>cars Component</h1>
+    <ul>
+        <router-link tag="li"
+                     v-for="car of 5"
+                     v-bind:key="car"
+                     v-bind:to="'cars/'+car"
+        ><a>Car {{car}}</a></router-link>
+    </ul>
 </section>

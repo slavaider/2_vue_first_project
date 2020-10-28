@@ -2,6 +2,15 @@
     <h1>Car id is {{id}}</h1>
     <div class="btn btn-info my-2" @click="Back">Back</div>
     <hr>
-    <router-link class="btn btn-info my-2" :to="{name:'carFull',params:{id}}">Info</router-link>
+    <!--<router-link tag="button" class="btn btn-info my-2" :to="'/cars/'+id+'/full'">Info</router-link>-->
+    <!--Same as below-->
+    <router-link class="btn btn-info my-2"
+                 :to="{name:'carFull',
+                 params:{id:id},
+                 query:{name:'Mazda',year:2000},
+                 hash:'#scroll'
+    }">Info
+    </router-link>
+
     <router-view></router-view>
 </section>
